@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RougeASCC", "RougeASCC\RougeASCC.csproj", "{DA527D87-22E2-4CD2-82A4-2943C88DEA75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA527D87-22E2-4CD2-82A4-2943C88DEA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA527D87-22E2-4CD2-82A4-2943C88DEA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA527D87-22E2-4CD2-82A4-2943C88DEA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA527D87-22E2-4CD2-82A4-2943C88DEA75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

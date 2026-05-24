@@ -1,0 +1,5 @@
+[
+  { "Id": "weapon_heavy_sword", "Symbol": "W", "Category": 0, "Name": "Важкий Меч", "Power": 15 },
+  { "Id": "armor_leather", "Symbol": "A", "Category": 1, "Name": "Шкіряна Броня", "Power": 5 },
+  { "Id": "upgrade_space_jump", "Symbol": "S", "Category": 3, "Name": "Space Jump", "Power": 0 }
+]

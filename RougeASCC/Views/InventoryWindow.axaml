@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RougeASCC.ViewModels"
+        xmlns:models="using:RougeASCC.Models"
+        x:Class="RougeASCC.Views.InventoryWindow"
+        x:DataType="vm:InventoryViewModel"
+        Title="ПАУЗА: ЕКІПІРУВАННЯ ТА МОДИФІКАЦІЇ" Width="700" Height="450" Background="#111111">
+    
+    <Grid ColumnDefinitions="200, *, 200" Margin="15">
+        
+        <StackPanel Grid.Column="0" Spacing="10">
+            <TextBlock Text="ГЕРОЙ" Foreground="Yellow" FontSize="18" FontWeight="Bold"/>
+            <Border Background="#222222" Padding="10" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock Text="HP:" Foreground="Gray"/>
+                    <TextBlock Text="{Binding HpStatus}" Foreground="White" FontWeight="Bold"/>
+                    <Separator Margin="0,5"/>
+                    <TextBlock Text="УРОН:" Foreground="Gray"/>
+                    <TextBlock Text="{Binding DamageStatus}" Foreground="Red" FontWeight="Bold"/>
+                    <Separator Margin="0,5"/>
+                    <TextBlock Text="ЗАХИСТ:" Foreground="Gray"/>
+                    <TextBlock Text="{Binding DefenseStatus}" Foreground="Blue" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+            <TextBlock Text="Слоти тіла (3):" Foreground="Gray" FontSize="12"/>
+            <ItemsControl ItemsSource="{Binding Player.PersonalUpgrades}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" Foreground="Cyan" FontSize="12"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <Button Content="ЗБЕРЕГТИ ГРУ" Background="DarkBlue" Click="SaveGame_Click" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="15,0">
+            <TextBlock Text="РЮКЗАК" Foreground="LimeGreen" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+            <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" 
+                     Height="330" Background="#1A1A1A">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:ItemModel">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{Binding Symbol}" Foreground="Gold" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Category}" Foreground="White"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Spacing="10" IsVisible="{Binding IsUpgradeSelected}">
+            <TextBlock Text="ДІЇ З АПГРЕЙДОМ" Foreground="Orange" FontSize="16" FontWeight="Bold"/>
+            <TextBlock Text="Виберіть куди вставити:" FontSize="12" Foreground="Gray" TextWrapping="Wrap"/>
+            
+            <Button Content="Вживити в тіло" Background="#2E4A2E" HorizontalAlignment="Stretch"
+                    Click="ApplyToSelf_Click"/>
+            
+            <Button Content="Вставити в зброю" Background="#4A2E2E" HorizontalAlignment="Stretch"
+                    Click="SocketToWeapon_Click"/>
+            
+            <Button Content="Вставити в броню" Background="#2E2E4A" HorizontalAlignment="Stretch"
+                    Click="SocketToArmor_Click"/>
+            
+            <Separator Margin="0,10"/>
+            <TextBlock Text="Опис апгрейда:" Foreground="Gray" FontSize="12"/>
+            <TextBlock Text="{Binding SelectedItem.Name}" Foreground="White" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>

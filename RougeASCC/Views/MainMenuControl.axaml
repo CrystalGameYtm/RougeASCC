@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             x:Class="RougeASCC.Views.MainMenuControl"
+             Background="Black">
+    
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
+        <TextBlock Text="ROUGE ASCC" FontSize="72" Foreground="Yellow" 
+                   HorizontalAlignment="Center" FontWeight="Bold"/>
+        <TextBlock Text="True Space Jump Roguelike" FontSize="18" Foreground="Gray" 
+                   HorizontalAlignment="Center" Margin="0,0,0,40"/>
+
+        <Button Name="NewGameBtn" Content="НОВА ГРА" Width="250" Height="50" 
+                Background="#222222" Foreground="White" BorderBrush="Yellow" BorderThickness="1"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Click="NewGame_Click"/>
+
+        <Button Name="ContinueBtn" Content="ПРОДОВЖИТИ" Width="250" Height="50" 
+                Background="#222222" Foreground="White" BorderBrush="LimeGreen" BorderThickness="1"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Click="Continue_Click"/>
+        <Button Content="НАЛАШТУВАННЯ" Width="250" Height="50" 
+                Background="#222222" Foreground="White" BorderBrush="Cyan" BorderThickness="1"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Click="Settings_Click"/>
+        <Button Content="ВИХІД" Width="250" Height="50" 
+                Background="#222222" Foreground="White"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                Click="Exit_Click"/>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="RougeASCC/App.axaml" value="RougeASCC/RougeASCC.csproj" />
+        <entry key="RougeASCC/Views/InventoryWindow.axaml" value="RougeASCC/RougeASCC.csproj" />
+        <entry key="RougeASCC/Views/MainMenuControl.axaml" value="RougeASCC/RougeASCC.csproj" />
+        <entry key="RougeASCC/Views/MainWindow.axaml" value="RougeASCC/RougeASCC.csproj" />
+        <entry key="RougeASCC/Views/SettingsControl.axaml" value="RougeASCC/RougeASCC.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

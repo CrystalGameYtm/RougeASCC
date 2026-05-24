@@ -1,0 +1,4 @@
+[
+  { "Id": "mob_rat", "Symbol": "r", "Name": "Підземний Щур", "Health": 10, "Damage": 2, "ColorHex": "#8B4513" },
+  { "Id": "mob_goblin", "Symbol": "g", "Name": "Гоблін-Мародер", "Health": 25, "Damage": 5, "ColorHex": "#32CD32" }
+]
