@@ -27,7 +27,7 @@ public partial class App : Application
         // 2. РЕЄСТРАЦІЯ СЕРВІСІВ (Singleton - один екземпляр на всю гру)
         services.AddSingleton<AudioService>();
         services.AddSingleton<SaveService>();
-
+        services.AddTransient<SettingsViewModel>();
         services.AddTransient<GameViewModel>();
         Services = services.BuildServiceProvider();
 

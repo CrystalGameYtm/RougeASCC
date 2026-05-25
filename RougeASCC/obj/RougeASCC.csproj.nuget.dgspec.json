@@ -73,9 +73,9 @@
               "target": "Package",
               "version": "[10.0.8, )"
             },
-            "NetCoreAudio": {
+            "Silk.NET.OpenAL": {
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.23.0, )"
             }
           },
           "imports": [

@@ -1,17 +1,23 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:RougeASCC.ViewModels"
+             x:DataType="vm:SettingsViewModel"
              x:Class="RougeASCC.Views.SettingsControl"
              Background="Black">
     
-    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20" Width="400">
         <TextBlock Text="НАЛАШТУВАННЯ" FontSize="48" Foreground="Cyan" 
                    HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,30"/>
         
-        <TextBlock Text="Музика та Звук (в розробці)" Foreground="Gray" FontSize="18" HorizontalAlignment="Center"/>
+        <TextBlock Text="Гучність музики" Foreground="White" FontSize="18"/>
+        <Slider Minimum="0" Maximum="100" Value="{Binding MusicVolume}" Foreground="Cyan"/>
+
+        <TextBlock Text="Гучність ефектів" Foreground="White" FontSize="18"/>
+        <Slider Minimum="0" Maximum="100" Value="{Binding SfxVolume}" Foreground="LimeGreen"/>
         
         <Button Content="ПОВЕРНУТИСЯ" Width="250" Height="50" Margin="0,40,0,0"
                 Background="#222222" Foreground="White" BorderBrush="Red" BorderThickness="1"
-                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                 Click="Back_Click"/>
     </StackPanel>
 </UserControl>

@@ -32,9 +32,9 @@ public class PlayerModel
     
     // НОВЕ: Базові швидкості. 
     // Наприклад, 10 - це стандартна затримка (MoveCooldown), чим менше значення, тим швидше.
-    public int BaseWalkSpeed { get; set; } = 10; 
+    public int BaseWalkSpeed { get; set; } = 5; 
     public int BaseAttackSpeed { get; set; } = 45; 
-    public int BaseWalkCooldown { get; set; } = 5;
+    public int BaseWalkCooldown { get; set; } = 20;
     // --- УНІВЕРСАЛЬНИЙ МЕТОД ПОШУКУ ЕФЕКТІВ ---
     // Цей метод шукає вказаний ефект ОДНОЧАСНО і в зброї, і в броні
     private int GetSocketEffectTotal(UpgradeEffect effect)

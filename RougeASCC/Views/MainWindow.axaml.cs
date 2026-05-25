@@ -18,7 +18,7 @@ public partial class MainWindow : Window
         var audio = App.Services!.GetRequiredService<AudioService>();
         
         audio.StopMusic();
-        audio.PlayMusic("bgm.mp3");
+        audio.PlayMusic("bgm.wav");
 
         GameViewModel viewModel;
         if (savedState != null)
@@ -43,9 +43,13 @@ public partial class MainWindow : Window
         audio.StopMusic();
         Content = new MainMenuControl();
     }
-
     public void SwitchToSettings()
     {
-        Content = new SettingsControl();
+        // Просимо DI контейнер зібрати нам модель налаштувань (з аудіосервісом всередині)
+        var settingsVm = App.Services!.GetRequiredService<SettingsViewModel>();
+        
+        // Відкриваємо екран і передаємо йому дані
+        Content = new SettingsControl { DataContext = settingsVm };
     }
+   
 }

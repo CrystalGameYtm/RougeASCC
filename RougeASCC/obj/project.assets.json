@@ -491,6 +491,19 @@
           "lib/net5.0/MicroCom.Runtime.dll": {}
         }
       },
+      "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/10.0.8": {
         "type": "package",
         "dependencies": {
@@ -519,6 +532,22 @@
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/9.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.DependencyModel.dll": {
             "related": ".xml"
           }
         },
@@ -558,13 +587,37 @@
           }
         }
       },
-      "NetCoreAudio/2.0.1": {
+      "Silk.NET.Core/2.23.0": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
+          "Microsoft.Extensions.DependencyModel": "9.0.9"
+        },
         "compile": {
-          "lib/netstandard2.1/NetCoreAudio.dll": {}
+          "lib/net6.0/Silk.NET.Core.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/NetCoreAudio.dll": {}
+          "lib/net6.0/Silk.NET.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Silk.NET.OpenAL/2.23.0": {
+        "type": "package",
+        "dependencies": {
+          "Silk.NET.Core": "2.23.0"
+        },
+        "compile": {
+          "lib/net5.0/Silk.NET.OpenAL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Silk.NET.OpenAL.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SkiaSharp/3.119.4-preview.1.1": {
@@ -1305,6 +1358,26 @@
         "microcom.runtime.nuspec"
       ]
     },
+    "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+      "sha512": "jek4XYaQ/PGUwDKKhwR8K47Uh1189PFzMeLqO83mXrXQVIpARZCcfuDedH50YDTepBkfijCZN5U/vZi++erxtg==",
+      "type": "package",
+      "path": "microsoft.dotnet.platformabstractions/3.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.xml",
+        "microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
+        "microsoft.dotnet.platformabstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/10.0.8": {
       "sha512": "daf62xHIrq8pnE709hgaZZN9tSam9TGGepWe1+bE6V3GEuVwJiMs6ib+38lfMCyAJAHiX0vapxBhsuMSV7U+cg==",
       "type": "package",
@@ -1364,6 +1437,34 @@
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel/9.0.9": {
+      "sha512": "fNGvKct2De8ghm0Bpfq0iWthtzIWabgOTi+gJhNOPhNJIowXNEUE2eZNW/zNCzrHVA3PXg2yZ+3cWZndC2IqYA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/9.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
+        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.9.0.9.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -1458,19 +1559,48 @@
         "microsoft.io.recyclablememorystream.nuspec"
       ]
     },
-    "NetCoreAudio/2.0.1": {
-      "sha512": "S9i/e+z9gzwXG0vY+qpF21bKEmmCE7LmqPtNM0grgE/P5vNHjUnpJdHwdb62wW/Ypa38RqqLErGkdRKxFfDGng==",
+    "Silk.NET.Core/2.23.0": {
+      "sha512": "D7AT/nnwlB+4RZ84XY8QNGBZMJI5z9l4CSSETIJ1wCfRJzRt/341y3MRZ4HbnFz4r/IGaWOEZr86iE+0/65yyQ==",
       "type": "package",
-      "path": "netcoreaudio/2.0.1",
+      "path": "silk.net.core/2.23.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
         "README.md",
-        "icon.jpg",
-        "lib/netstandard2.1/NetCoreAudio.dll",
-        "netcoreaudio.2.0.1.nupkg.sha512",
-        "netcoreaudio.nuspec"
+        "lib/net5.0/Silk.NET.Core.dll",
+        "lib/net5.0/Silk.NET.Core.xml",
+        "lib/net6.0/Silk.NET.Core.dll",
+        "lib/net6.0/Silk.NET.Core.xml",
+        "lib/netcoreapp3.1/Silk.NET.Core.dll",
+        "lib/netcoreapp3.1/Silk.NET.Core.xml",
+        "lib/netstandard2.0/Silk.NET.Core.dll",
+        "lib/netstandard2.0/Silk.NET.Core.xml",
+        "lib/netstandard2.1/Silk.NET.Core.dll",
+        "lib/netstandard2.1/Silk.NET.Core.xml",
+        "silk.net.core.2.23.0.nupkg.sha512",
+        "silk.net.core.nuspec",
+        "silkdotnet_v3.png"
+      ]
+    },
+    "Silk.NET.OpenAL/2.23.0": {
+      "sha512": "O8EaDRWGOcKniZ2VxKD/xOmugzUJz747KpqGRw3cezDsz8nD66OZW217o1rT06cG76f8eYigy/yY6eRdhRqHHQ==",
+      "type": "package",
+      "path": "silk.net.openal/2.23.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net5.0/Silk.NET.OpenAL.dll",
+        "lib/net5.0/Silk.NET.OpenAL.xml",
+        "lib/netcoreapp3.1/Silk.NET.OpenAL.dll",
+        "lib/netcoreapp3.1/Silk.NET.OpenAL.xml",
+        "lib/netstandard2.0/Silk.NET.OpenAL.dll",
+        "lib/netstandard2.0/Silk.NET.OpenAL.xml",
+        "lib/netstandard2.1/Silk.NET.OpenAL.dll",
+        "lib/netstandard2.1/Silk.NET.OpenAL.xml",
+        "silk.net.openal.2.23.0.nupkg.sha512",
+        "silk.net.openal.nuspec",
+        "silkdotnet_v3.png"
       ]
     },
     "SkiaSharp/3.119.4-preview.1.1": {
@@ -1732,7 +1862,7 @@
       "AvaloniaUI.DiagnosticsSupport >= 2.2.1",
       "CommunityToolkit.Mvvm >= 8.4.1",
       "Microsoft.Extensions.DependencyInjection >= 10.0.8",
-      "NetCoreAudio >= 2.0.1"
+      "Silk.NET.OpenAL >= 2.23.0"
     ]
   },
   "packageFolders": {
@@ -1807,9 +1937,9 @@
             "target": "Package",
             "version": "[10.0.8, )"
           },
-          "NetCoreAudio": {
+          "Silk.NET.OpenAL": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "[2.23.0, )"
           }
         },
         "imports": [

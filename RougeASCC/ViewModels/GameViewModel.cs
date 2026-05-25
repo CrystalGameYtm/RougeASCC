@@ -117,7 +117,7 @@ public class GameViewModel
         if (enemy.Health <= 0)
         {
             CurrentMap.Enemies.Remove(enemy);
-            _audio.PlaySoundEffect("death_enemy.wav"); 
+            _audio.PlaySoundEffect("enemy_death.wav"); 
         }
     }
     public void UpdateVisuals()
@@ -139,7 +139,7 @@ public class GameViewModel
         var item = CurrentMap.Items.FirstOrDefault(i => i.X == Player.LogicX && i.Y == Player.LogicY);
         if (item != null)
         {
-            _audio.PlaySoundEffect("pickup.mp3");
+            _audio.PlaySoundEffect("pickup_1.wav");
             if (item.Category == ItemCategory.SpaceJump)
             {
                 if (!Player.HasSpaceJump) 

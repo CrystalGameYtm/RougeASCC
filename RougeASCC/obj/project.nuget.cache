@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k7NaMVREpV4=",
+  "dgSpecHash": "msb5K07YORM=",
   "success": true,
   "projectFilePath": "/run/media/crystalum/MEDIA/Program/repos/RougeASCC/RougeASCC/RougeASCC.csproj",
   "expectedPackageFiles": [
@@ -26,11 +26,14 @@
     "/home/crystalum/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/8.3.1.3/harfbuzzsharp.nativeassets.webassembly.8.3.1.3.nupkg.sha512",
     "/home/crystalum/.nuget/packages/harfbuzzsharp.nativeassets.win32/8.3.1.3/harfbuzzsharp.nativeassets.win32.8.3.1.3.nupkg.sha512",
     "/home/crystalum/.nuget/packages/microcom.runtime/0.11.4/microcom.runtime.0.11.4.nupkg.sha512",
+    "/home/crystalum/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.6/microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "/home/crystalum/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.8/microsoft.extensions.dependencyinjection.10.0.8.nupkg.sha512",
     "/home/crystalum/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.8/microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
+    "/home/crystalum/.nuget/packages/microsoft.extensions.dependencymodel/9.0.9/microsoft.extensions.dependencymodel.9.0.9.nupkg.sha512",
     "/home/crystalum/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "/home/crystalum/.nuget/packages/microsoft.io.recyclablememorystream/3.0.1/microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
-    "/home/crystalum/.nuget/packages/netcoreaudio/2.0.1/netcoreaudio.2.0.1.nupkg.sha512",
+    "/home/crystalum/.nuget/packages/silk.net.core/2.23.0/silk.net.core.2.23.0.nupkg.sha512",
+    "/home/crystalum/.nuget/packages/silk.net.openal/2.23.0/silk.net.openal.2.23.0.nupkg.sha512",
     "/home/crystalum/.nuget/packages/skiasharp/3.119.4-preview.1.1/skiasharp.3.119.4-preview.1.1.nupkg.sha512",
     "/home/crystalum/.nuget/packages/skiasharp.nativeassets.linux/3.119.4-preview.1.1/skiasharp.nativeassets.linux.3.119.4-preview.1.1.nupkg.sha512",
     "/home/crystalum/.nuget/packages/skiasharp.nativeassets.macos/3.119.4-preview.1.1/skiasharp.nativeassets.macos.3.119.4-preview.1.1.nupkg.sha512",
