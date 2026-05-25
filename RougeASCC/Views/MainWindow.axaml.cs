@@ -15,7 +15,6 @@ public partial class MainWindow : Window
 
     public void SwitchToGame(GameState? savedState)
     {
-        // ПРОСИМО СЕРВІСИ З DI КОНТЕЙНЕРА
         var audio = App.Services!.GetRequiredService<AudioService>();
         
         audio.StopMusic();
@@ -24,11 +23,14 @@ public partial class MainWindow : Window
         GameViewModel viewModel;
         if (savedState != null)
         {
+            // Передаємо параметри рівно в тому порядку, який ми щойно прописали у ViewModel:
+            // 1. audio (AudioService)
+            // 2. savedState.Player (PlayerModel)
+            // 3. savedState.Map (MapModel)
             viewModel = new GameViewModel(audio, savedState.Player, savedState.Map);
         }
         else
         {
-            // Беремо новий екземпляр гри з усіма підключеними залежностями
             viewModel = App.Services!.GetRequiredService<GameViewModel>();
         }
 

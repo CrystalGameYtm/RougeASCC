@@ -34,7 +34,7 @@ public class PlayerModel
     // Наприклад, 10 - це стандартна затримка (MoveCooldown), чим менше значення, тим швидше.
     public int BaseWalkSpeed { get; set; } = 10; 
     public int BaseAttackSpeed { get; set; } = 45; 
-
+    public int BaseWalkCooldown { get; set; } = 5;
     // --- УНІВЕРСАЛЬНИЙ МЕТОД ПОШУКУ ЕФЕКТІВ ---
     // Цей метод шукає вказаний ефект ОДНОЧАСНО і в зброї, і в броні
     private int GetSocketEffectTotal(UpgradeEffect effect)
@@ -69,4 +69,7 @@ public class PlayerModel
     public int TotalAttackSpeed => BaseAttackSpeed 
                                    - PersonalUpgrades.Where(u => u.Effect == UpgradeEffect.AttackSpeed).Sum(u => u.EffectValue)
                                    - GetSocketEffectTotal(UpgradeEffect.AttackSpeed);
+    public int TotalWalkCooldown => BaseWalkCooldown 
+                                    - PersonalUpgrades.Where(u => u.Effect == UpgradeEffect.WalkSpeed).Sum(u => u.EffectValue)
+                                    - (EquippedArmor?.Sockets.Where(s => s.Effect == UpgradeEffect.WalkSpeed).Sum(s => s.EffectValue) ?? 0);
 }

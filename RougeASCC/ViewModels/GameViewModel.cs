@@ -9,7 +9,8 @@ namespace RougeASCC.ViewModels;
 
 public class GameViewModel 
 {
-    private readonly AudioService _audio = new();
+    public bool IsGameOver => Player.HP <= 0;
+    private readonly AudioService _audio;
     public MapModel CurrentMap { get; private set; }
     public PlayerModel Player { get; private set; }
     private readonly HashSet<Key> _pressedKeys = new();
@@ -112,11 +113,11 @@ public class GameViewModel
     {
         int damage = Player.TotalDamage; 
         enemy.Health -= damage;
-        _audio.PlaySoundEffect("hit.mp3"); 
+        _audio.PlaySoundEffect("hit.wav"); 
         if (enemy.Health <= 0)
         {
             CurrentMap.Enemies.Remove(enemy);
-            _audio.PlaySoundEffect("death_enemy.mp3"); 
+            _audio.PlaySoundEffect("death_enemy.wav"); 
         }
     }
     public void UpdateVisuals()
@@ -134,11 +135,11 @@ public class GameViewModel
  
     private void CheckItemPickup()
     {
-        _audio.PlaySoundEffect("pickup.mp3");
+        
         var item = CurrentMap.Items.FirstOrDefault(i => i.X == Player.LogicX && i.Y == Player.LogicY);
         if (item != null)
         {
-            
+            _audio.PlaySoundEffect("pickup.mp3");
             if (item.Category == ItemCategory.SpaceJump)
             {
                 if (!Player.HasSpaceJump) 
@@ -190,7 +191,7 @@ public class GameViewModel
         }
     }
     
-    public GameViewModel(PlayerModel savedPlayer, MapModel savedMap, AudioService audio)
+    public GameViewModel(AudioService audio, PlayerModel savedPlayer, MapModel savedMap)
     {
         _audio = audio;
         Player = savedPlayer;

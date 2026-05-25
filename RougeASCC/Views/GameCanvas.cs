@@ -40,6 +40,19 @@ public class GameCanvas : Control
         if (e.Key == Key.D || e.Key == Key.Right) dx = 1;
 
         if (dx != 0 || dy != 0) _viewModel.MovePlayer(dx, dy);
+        if (_viewModel.IsGameOver)
+        {
+            if (e.Key == Key.Escape)
+            {
+                if (TopLevel.GetTopLevel(this) is MainWindow mainWindow)
+                {
+                    mainWindow.SwitchToMainMenu();
+                }
+            }
+            e.Handled = true;
+            return;
+        }
+        _pressedKeys.Add(e.Key);
         
         if (e.Key == Key.Space) 
         {
@@ -69,17 +82,16 @@ public class GameCanvas : Control
     }
     private void GameLoopTick(object? sender, EventArgs e)
     {
+        // Якщо гра закінчена - зупиняємо будь-які прорахунки фізики, руху та ШІ
+        if (_viewModel.IsGameOver)
+        {
+            InvalidateVisual(); 
+            return;
+        }
+
         _animationTick++; 
         _viewModel.UpdateEnemiesAI();
-        
-        bool isMovingInput = _pressedKeys.Contains(Key.W) || _pressedKeys.Contains(Key.S) || 
-                             _pressedKeys.Contains(Key.A) || _pressedKeys.Contains(Key.D) ||
-                             _pressedKeys.Contains(Key.Up) || _pressedKeys.Contains(Key.Down) || 
-                             _pressedKeys.Contains(Key.Left) || _pressedKeys.Contains(Key.Right);
-        if (isMovingInput && _viewModel.Player.LogicZ == 0)
-        {
-            _walkFrameCounter++;
-        }
+
         if (_moveCooldown > 0) 
         {
             _moveCooldown--;
@@ -95,7 +107,7 @@ public class GameCanvas : Control
             if (dx != 0 || dy != 0)
             {
                 _viewModel.MovePlayer(dx, dy);
-                _moveCooldown = 10; 
+                _moveCooldown = Math.Max(2, _viewModel.Player.TotalWalkCooldown); 
             }
         }
 
@@ -211,6 +223,17 @@ public class GameCanvas : Control
         DrawSymbol(context, playerSymbol, px, renderY, playerBrush);
 
         DrawHUD(context, player);
+        if (player.HP <= 0)
+        {
+            context.DrawRectangle(new SolidColorBrush(Color.FromArgb(180, 0, 0, 0)), null, new Rect(0, 0, Bounds.Width, Bounds.Height));
+
+            var gameOverText = new FormattedText(
+                "ГРА ЗАКІНЧЕНА\n\n[Натисніть ESC для виходу в меню]", 
+                System.Globalization.CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
+                new Typeface(FontFamily.Default, FontStyle.Normal, FontWeight.Bold), 32, Brushes.Red);
+                
+            context.DrawText(gameOverText, new Point(Bounds.Width / 2 - 200, Bounds.Height / 2 - 50));
+        }
     }
     
     private void DrawHUD(DrawingContext context, PlayerModel player)
